@@ -1,0 +1,35 @@
+<mvc:View id="Main" controllerName="sap.ui.demo.basicTemplate.controller.FlexibleColumnLayout"
+          xmlns:mvc="sap.ui.core.mvc"
+          displayBlock="true"
+          xmlns="sap.f"
+          xmlns:core="sap.ui.core"
+          xmlns:m="sap.m">
+    <m:Page class="secondPage" title="{i18n>title}">
+        <m:customHeader class="NavToolbar">
+            <core:Fragment fragmentName="sap.ui.demo.basicTemplate.view.Fragments.Header" type="XML"/>
+        </m:customHeader>
+            <m:content>
+                <FlexibleColumnLayout id="fcl" initialMidColumnPage="start" layout="TwoColumnsMidExpanded">
+                    <beginColumnPages>
+                        <m:Page showHeader="false">
+                            <m:content>
+                            	<core:Fragment fragmentName="sap.ui.demo.basicTemplate.view.Fragments.Master" type="XML"/>
+                            </m:content>
+                        </m:Page>
+                    </beginColumnPages>
+                    <midColumnPages>
+                        <m:Page id="start" showHeader="false">
+                            <m:content>
+                                <core:Fragment fragmentName="sap.ui.demo.basicTemplate.view.Fragments.Details" type="XML"/>
+                            </m:content>
+                        </m:Page>
+                        <m:Page id="charts" showHeader="false">
+                            <m:content>
+                               <m:Text text="Two" />
+                            </m:content>
+                        </m:Page>
+                    </midColumnPages>
+                </FlexibleColumnLayout>
+            </m:content>
+        </m:Page>
+</mvc:View>
